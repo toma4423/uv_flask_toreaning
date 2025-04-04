@@ -8,5 +8,14 @@
 <body>
     <h1>Flask学習プロジェクト</h1>
     <p>これはトップページです。</p>
+    <a href="{{ url_for('game.top') }}">ゲームセンターに移動</a>
+    <a href="{{ url_for('game.ranking') }}">ランキングを見る</a>
+    
+    <div class="learning-links">
+        <h2>学習ページ</h2>
+        <ul>
+            <li><a href="{{ url_for('jinja_s.index') }}">Jinja2テンプレートエンジンを学ぶ</a></li>
+        </ul>
+    </div>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームランキング</title>
+</head>
+<body>
+    <h1>ランキング</h1>
+
+    <table class="ranking-table">
+        <thead>
+            <tr>
+                <th>順位</th>
+                <th>プレイヤー名</th>
+                <th>スコア</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rank in rankings %}
+            <tr>
+                <td>{{ rank.rank }}位</td>
+                <td>{{ rank.name }}</td>
+                <td>{{ rank.score }}点</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation">
+        <a href="{{ url_for('game.top') }}">ゲーム選択に戻る</a>
+    </div>
+</body>
+</html>

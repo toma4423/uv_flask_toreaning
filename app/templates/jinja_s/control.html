@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制御構文 - Jinja2学習</title>
+    <style>
+        .example { background: #f5f5f5; padding: 15px; margin: 10px 0; }
+        .code { background: #333; color: #fff; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>制御構文の学習</h1>
+
+    <div class="example">
+        <h2>1. if文</h2>
+        <div class="code">
+            <pre>{% raw %}{% if show_message %}
+    メッセージを表示
+{% else %}
+    メッセージはありません
+{% endif %}{% endraw %}</pre>
+        </div>
+        <div class="result">
+            結果:
+            {% if show_message %}
+                <p>メッセージを表示</p>
+            {% else %}
+                <p>メッセージはありません</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>2. for文</h2>
+        <div class="code">
+            <pre>{% raw %}{% for user in users %}
+    {{ user.name }} ({{ user.age }}歳)
+{% endfor %}{% endraw %}</pre>
+        </div>
+        <div class="result">
+            結果:
+            <ul>
+            {% for user in users %}
+                <li>{{ user.name }} ({{ user.age }}歳)</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>3. loop変数の使用</h2>
+        <div class="code">
+            <pre>{% raw %}{% for n in numbers %}
+    {{ loop.index }}番目: {{ n }}
+{% endfor %}{% endraw %}</pre>
+        </div>
+        <div class="result">
+            結果:
+            <ul>
+            {% for n in numbers %}
+                <li>{{ loop.index }}番目: {{ n }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <p><a href="{{ url_for('jinja_s.index') }}">Jinja2学習トップに戻る</a></p>
+</body>
+</html>

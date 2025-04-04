@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィルター - Jinja2学習</title>
+    <style>
+        .example { background: #f5f5f5; padding: 15px; margin: 10px 0; }
+        .code { background: #333; color: #fff; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>フィルターの学習</h1>
+
+    <div class="example">
+        <h2>1. 文字列フィルター</h2>
+        <div class="code">
+            <pre>{{ '{{ text|capitalize }}' }}
+{{ '{{ text|upper }}' }}
+{{ '{{ text|title }}' }}</pre>
+        </div>
+        <div class="result">
+            結果:
+            <ul>
+                <li>capitalize: {{ text|capitalize }}</li>
+                <li>upper: {{ text|upper }}</li>
+                <li>title: {{ text|title }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>2. HTMLエスケープ</h2>
+        <div class="code">
+            <pre>{{ '{{ html_text|escape }}' }}
+{{ '{{ html_text|safe }}' }}</pre>
+        </div>
+        <div class="result">
+            結果:
+            <p>escape: {{ html_text|escape }}</p>
+            <p>safe: {{ html_text|safe }}</p>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>3. リストフィルター</h2>
+        <div class="code">
+            <pre>{{ '{{ numbers|join(", ") }}' }}
+{{ '{{ numbers|length }}' }}
+{{ '{{ numbers|first }}' }}
+{{ '{{ numbers|last }}' }}</pre>
+        </div>
+        <div class="result">
+            結果:
+            <ul>
+                <li>join: {{ numbers|join(", ") }}</li>
+                <li>length: {{ numbers|length }}</li>
+                <li>first: {{ numbers|first }}</li>
+                <li>last: {{ numbers|last }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <p><a href="{{ url_for('jinja_s.index') }}">Jinja2学習トップに戻る</a></p>
+</body>
+</html>
